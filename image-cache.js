@@ -1,7 +1,9 @@
 const Core = require('./lib/core');
 const _ = require('underscore');
-const path = require('path');
-const fs = require('fs');
+// const path = require('path');
+// const fs = require('fs');
+var path;
+var fs;
 
 /**
  * image-cache - Image Cache Async with Base64
@@ -17,6 +19,11 @@ class imageCache extends Core {
 
 		return this;
 	}
+
+    setLibForImageCache(p, f) {
+        path = p;
+        fs = f
+    }
 	/** isCached
 	 * @description Async function check is image on argument available on cache
 	 *
